@@ -3,10 +3,48 @@
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
-  <b>
-    <h1>Welcome to Flatcard</h1>
-  </b>
   
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+      <h2 class="mb-12 text-2xl text-center">Newest Items</h2>
 
+      <div class="grid grid-cols-3 gap-3">
+        {% for item in items %}
+           <div>
+               <a href="#">
+                    <!-- Notun if-else condition ta ekhane add kora hoyeche -->
+                    <div>
+                        {% if item.image %}
+                            <img src="{{ item.image.url }}" class="w-full h-64 object-contain bg-gray-100 rounded-t-xl text-center">
+                        {% else %}
+                            <div class="w-full h-64 bg-gray-200 rounded-t-xl flex items-center justify-center text-gray-500">
+                                No Image
+                            </div>
+                        {% endif %}
+                    </div>
+                    <!-- Chobir condition shesh -->
+
+                    <div class="p-6 bg-white rounded-b-xl">
+                        <h2 class="text-2xl">{{ item.name }}</h2>
+                        <p class="mt-4 text-gray-500">Price: {{ item.price }}</p>
+                    </div>
+               </a>
+            </div>
+        {% endfor %}    
+        </div>
+      </div>
+ 
+      <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+          <h2 class="mb-12 text-2xl text-center">Categories</h2>
+
+          <div class="grid grid-cols-3 gap-3">
+            {% for category in categories %}
+                <div class="p-6 bg-white rounded-xl">
+                    <a href="#">
+                        <h2 class="text-2xl">{{ category.name }}</h2>
+                        <p class="text-gray-500">{{ category.items.count }} Items</p>
+                    </a>
+                </div>
+            {% endfor %}
+          </div>
+      </div>  
 {% endblock %}
-
