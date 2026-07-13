@@ -1,5 +1,4 @@
 {% extends 'core/base.html' %}
-
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
@@ -10,18 +9,17 @@
       <div class="grid grid-cols-3 gap-3">
         {% for item in items %}
            <div>
-               <a href="#">
-                    <!-- Notun if-else condition ta ekhane add kora hoyeche -->
+               <a href="{% url 'items:detail' item.id %}">
+                
+                    
                     <div>
                         {% if item.image %}
                             <img src="{{ item.image.url }}" class="w-full h-64 object-contain bg-gray-100 rounded-t-xl text-center">
                         {% else %}
                             <div class="w-full h-64 bg-gray-200 rounded-t-xl flex items-center justify-center text-gray-500">
-                                No Image
                             </div>
                         {% endif %}
                     </div>
-                    <!-- Chobir condition shesh -->
 
                     <div class="p-6 bg-white rounded-b-xl">
                         <h2 class="text-2xl">{{ item.name }}</h2>
