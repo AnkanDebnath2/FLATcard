@@ -30,7 +30,7 @@
         <div class="flex-1">
             <h1 class="mb-6 text-3xl">{{ item.name }}</h1>
             <p class="text-gray-500"><strong>Price: </strong> {{ item.price }}</p>
-            <p class="text-gray-500"><strong>Seller: </strong> {{ item.seller }}</p>
+            <p class="text-gray-500"><strong>Seller: </strong> {{ item.created_by.username }}</p>
             
             {% if item.Location %}
                  <p class="text-gray-700 ">
@@ -56,13 +56,18 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 <script>
-    const swiper = new Swiper('.swiper', {
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     });
 </script>
 {% endblock %}
