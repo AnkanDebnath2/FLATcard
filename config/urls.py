@@ -6,9 +6,10 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-   path('', include('flatax.urls')),
+    path('', include('flatax.urls')),
     path('items/', include('items.urls')),
     path('admin/', admin.site.urls),
+    path('inbox/', include('conversation.urls')),
     
 ]
 

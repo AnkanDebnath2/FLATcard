@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../.git"
+		},
+		{
+			"path": "../.vscode"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../flatax"
+		},
+		{
+			"path": "../items"
+		},
+		{
+			"path": "../media"
+		},
+		{
+			"path": "../venv"
+		}
+	]
+}
